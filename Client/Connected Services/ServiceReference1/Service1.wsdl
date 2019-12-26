@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:65420/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:65420/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:65420/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:65420/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.IO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_UploadFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFile" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UploadFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Download_InputMessage">
+    <wsdl:part name="parameters" element="tns:Download" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Download_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AllFiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:AllFiles" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AllFiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AllFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetFileHash_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileHash" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetFileHash_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileHashResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SetFileHash_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetFileHash" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SetFileHash_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetFileHashResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Register_InputMessage">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CheckUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CheckUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FileInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:FileInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FileInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FileInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="UploadFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UploadFile" message="tns:IService1_UploadFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UploadFileResponse" message="tns:IService1_UploadFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Download">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Download" message="tns:IService1_Download_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DownloadResponse" message="tns:IService1_Download_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AllFiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AllFiles" message="tns:IService1_AllFiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AllFilesResponse" message="tns:IService1_AllFiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileHash">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetFileHash" message="tns:IService1_GetFileHash_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetFileHashResponse" message="tns:IService1_GetFileHash_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFileHash">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SetFileHash" message="tns:IService1_SetFileHash_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SetFileHashResponse" message="tns:IService1_SetFileHash_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Login" message="tns:IService1_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoginResponse" message="tns:IService1_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Register" message="tns:IService1_Register_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RegisterResponse" message="tns:IService1_Register_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CheckUser" message="tns:IService1_CheckUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CheckUserResponse" message="tns:IService1_CheckUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FileInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/FileInfo" message="tns:IService1_FileInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/FileInfoResponse" message="tns:IService1_FileInfo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://tempuri.org/IService1/UploadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Download">
+      <soap:operation soapAction="http://tempuri.org/IService1/Download" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllFiles">
+      <soap:operation soapAction="http://tempuri.org/IService1/AllFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileHash">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetFileHash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFileHash">
+      <soap:operation soapAction="http://tempuri.org/IService1/SetFileHash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IService1/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <soap:operation soapAction="http://tempuri.org/IService1/Register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/CheckUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileInfo">
+      <soap:operation soapAction="http://tempuri.org/IService1/FileInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:65420/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
